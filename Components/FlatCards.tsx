@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     margin: 10,
+    borderRadius: 10,
   },
   redCard: {backgroundColor: 'red'},
   orangeCard: {backgroundColor: 'orange'},
