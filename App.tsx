@@ -12,6 +12,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import FlatCards from './Components/FlatCards';
 import ElevatedCards from './Components/ElevatedCards';
+import ImageCards from './Components/ImageCards/ImageCards';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -22,6 +23,7 @@ function App(): JSX.Element {
         <View>
           <FlatCards />
           <ElevatedCards />
+          <ImageCards />
         </View>
       </ScrollView>
     </SafeAreaView>
