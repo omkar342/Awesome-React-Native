@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
   },
   elevatedCards: {
     backgroundColor: '#25D366',
-    elevation: 10,
+    elevation: 5,
     shadowOffset: {
       width: 20,
       height: 2,
     },
     shadowColor: '#ff000',
     shadowRadius: 5,
-    shadowOpacity: 0.5,
+    shadowOpacity: 1,
   },
 });
