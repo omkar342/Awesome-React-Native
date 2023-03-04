@@ -1,16 +1,33 @@
-import {StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Button,
+  Alert,
+  Linking,
+} from 'react-native';
 import React from 'react';
+import ImageCardButton from './ImageCardButton';
+import openWebsiteFunction from './OpenWebsiteFunction';
 
 interface ImageCardProps {
   company: String;
   uri: String;
   model: String;
   description: String;
+  linkURL: String;
 }
 
 const ImageCard = (props: ImageCardProps) => {
   return (
-    <View style={[styles.card, styles.cardImage]}>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={[styles.card, styles.cardImage]}
+      onPress={() => {
+        openWebsiteFunction(`${props.linkURL}`);
+      }}>
       <Image
         style={styles.image}
         source={{
@@ -22,7 +39,8 @@ const ImageCard = (props: ImageCardProps) => {
         <Text>{props.model}</Text>
         <Text>{props.description}</Text>
       </View>
-    </View>
+      <ImageCardButton linkURL={`${props.linkURL}`} />
+    </TouchableOpacity>
   );
 };
 
@@ -35,6 +53,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     // padding: '0 0 ',
     borderRadius: 10,
+    elevation: 29,
+    margin: 10,
   },
   cardTitle: {
     fontSize: 22,
@@ -45,8 +65,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   cardImage: {
-    margin: 6,
+    margin: 15,
     elevation: 3,
+    shadowOffset: {
+      width: 100,
+      height: 100,
+    },
   },
   image: {
     borderTopLeftRadius: 10,
